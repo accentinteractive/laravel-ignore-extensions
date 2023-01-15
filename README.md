@@ -55,7 +55,7 @@ The package uses auto discover. The package uses a middleware class that does th
 You can set the extensions to check for in the published config file, or by setting this values in .env. It defaults to 'jpg|gif|png|jpeg|txt|html|pdf|css|js'
 
 ```apacheconf
-EXTENSIONS_NOT_TO_PROCESS='jpg|gif|png|jpeg|txt|html|pdf|css|js
+EXTENSIONS_NOT_TO_PROCESS=jpg|gif|png|jpeg|txt|html|pdf|css|js
 ```
 
 ### Testing
