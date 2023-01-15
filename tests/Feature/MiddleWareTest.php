@@ -15,7 +15,7 @@ class MiddleWareTest extends TestCase
     /** @test */
     public function itAbortsRequestWithExtension()
     {
-        config(['laravel-ignore-extensions.extensions_to_be_ignored' => 'jpg']);
+        config(['laravel-ignore-extensions.extensions_not_to_process' => 'jpg']);
         $this->get(self::DOMAIN . '/image.jpg');
         $request = new Request();
 
@@ -29,7 +29,7 @@ class MiddleWareTest extends TestCase
     /** @test */
     public function itDoesNotAbortsRequestWithOtherExtension()
     {
-        config(['laravel-ignore-extensions.extensions_to_be_ignored' => 'jpg']);
+        config(['laravel-ignore-extensions.extensions_not_to_process' => 'jpg']);
         $this->get(self::DOMAIN . '/file.pdf');
         $request = new Request();
 

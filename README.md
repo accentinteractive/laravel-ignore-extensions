@@ -42,6 +42,8 @@ Step 3: Optionally publish the config file with:
 php artisan vendor:publish --provider="Accentinteractive\LaravelIgnoreExtensions\LaravelIgnoreExtensionsServiceProvider" --tag="config"
 ```
 
+Config for this package is stored in `config('laravel-ignore-extensions')`
+
 ## Usage
 
 The package uses auto discover. The package uses a middleware class that does the checking and aborting.
