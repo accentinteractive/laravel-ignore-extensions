@@ -1,0 +1,53 @@
+{
+    "name": "accentinteractive/laravel-ignore-extensions",
+    "description": "Do not process URLs with a extensions like .jpg, .png et cetera.",
+    "keywords": [
+        "accentinteractive",
+        "laravel-ignore-extensions"
+    ],
+    "homepage": "https://github.com/accentinteractive/laravel-ignore-extensions",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Joost van Veen",
+            "email": "joost@accentinteractive.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^7.4|^8.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "illuminate/console": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/filesystem": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "4.*|5.*|6.*|^7.0",
+        "phpunit/phpunit": "^8.4|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Accentinteractive\\LaravelIgnoreExtensions\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Accentinteractive\\LaravelIgnoreExtensions\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": " XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Accentinteractive\\LaravelIgnoreExtensions\\LaravelIgnoreExtensionsServiceProvider"
+            ]
+        }
+    }
+}
