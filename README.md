@@ -22,7 +22,7 @@ To use it on all requests, add it as the first option to the `web` section under
 ```php
 protected $middlewareGroups = [
     'web' => [
-        Accentinteractive\LaravelIgnoreExtensions\Http\Middleware\DoNotProcessExtensions::class,
+        \Accentinteractive\LaravelIgnoreExtensions\Http\Middleware\DoNotProcessExtensions::class,
     ],
 ];
 ```
@@ -31,7 +31,7 @@ To use it on specific requests, add it to any group or to the `protected $middle
 
 ```php
 protected $middleware = [
-        Accentinteractive\LaravelIgnoreExtensions\Http\Middleware\DoNotProcessExtensions::class,
+        \Accentinteractive\LaravelIgnoreExtensions\Http\Middleware\DoNotProcessExtensions::class,
     ];
 ```
 
