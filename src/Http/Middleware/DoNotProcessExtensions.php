@@ -22,10 +22,6 @@ class DoNotProcessExtensions
     {
         $pathinfo = pathinfo(request()->url());
 
-        // We have no extension
-        if (empty($pathinfo['extension'])) {
-            return $next($request);
-        }
         if ((new IgnoreExtensions())->hasExtension(Arr::get($pathinfo, 'extension'))) {
             abort(404);
         }
