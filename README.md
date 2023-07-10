@@ -62,6 +62,7 @@ EXTENSIONS_NOT_TO_PROCESS=jpg|gif|png|jpeg|txt|html|pdf|css|js
 
 ```bash
 vendor/bin/phpunit tests
+XDEBUG_MODE=coverage vendor/bin/phpunit tests --coverage-html code-coverage 
 ```
 
 ### Changelog
