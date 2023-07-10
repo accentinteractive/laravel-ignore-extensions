@@ -5,6 +5,7 @@ namespace Accentinteractive\LaravelIgnoreExtensions\Http\Middleware;
 use Accentinteractive\LaravelIgnoreExtensions\IgnoreExtensions;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class DoNotProcessExtensions
 {
@@ -19,15 +20,13 @@ class DoNotProcessExtensions
      */
     public function handle(Request $request, Closure $next)
     {
-        $url = request()->url();
-        $pathinfo = pathinfo($url);
+        $pathinfo = pathinfo(request()->url());
 
         // We have no extension
         if (empty($pathinfo['extension'])) {
             return $next($request);
         }
-
-        if ((new IgnoreExtensions())->hasExtension($url)) {
+        if ((new IgnoreExtensions())->hasExtension(Arr::get($pathinfo, 'extension'))) {
             abort(404);
         }
 
